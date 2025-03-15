@@ -21,7 +21,7 @@ const ChatBar = ({ onSendMessage }) => {
       placeholder="Digite sua mensagem..."
       onChange={(e) => setValue(e.target.value)}
       onKeyDown={(e) => e.key === "Enter" && handleSendMessage()}
-      className="h-[50px] rounded-4 pl-3"
+      className="h-[50px] font-medium rounded-4 pl-3"
     />
     <Button className="h-[50px] ml-2 cursor-pointer font-bold rounded-4" disabled={!hasMessage} onClick={handleSendMessage}>
       Enviar
