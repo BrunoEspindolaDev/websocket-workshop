@@ -1,15 +1,20 @@
 import { useState } from "react";
+import { isEmpty } from "lodash";
+import chatStore from './Chat.store';
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
-const ChatBar = ({ onSendMessage }) => {
+const ChatBar = () => {
+  const username = chatStore(({ username }) => username);
+  const setMessage = chatStore(({ setMessage }) => setMessage);
+
   const [value, setValue] = useState("");
 
-  const hasMessage = value.trim().length > 0
+  const hasMessage = isEmpty(value.trim());
 
   const handleSendMessage = () => {
     if(hasMessage){
-      onSendMessage(value);
+      setMessage({ sender: username, text: value.trim(), date: new Date() });
       setValue("");
     }
   }
