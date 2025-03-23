@@ -12,7 +12,7 @@ Ensure you have the following installed:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/BrunoEspindolaDev/websocket-workshop.git
+   git clone https://github.com/BrunoEspindolaDev/websocket-client-workshop.git
    cd <project-folder>
    ```
 
