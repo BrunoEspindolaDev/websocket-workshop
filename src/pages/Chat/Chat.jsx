@@ -5,7 +5,7 @@ import ChatUserDialog from './ChatUserDialog';
 
 const Chat = () => {
   return (
-    <div className="flex flex-col h-screen max-w-[600px] mx-auto shadow-lg">
+    <div className="flex flex-col h-[100dvh] max-w-[600px] mx-auto shadow-lg">
       <ChatNavbar />
       <ChatMessages />
       <ChatBar />
