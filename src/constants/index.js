@@ -1,1 +1,1 @@
-export const SERVER_URL = `http://localhost:4520`;
+export const SERVER_URL = `https://websocket-server-workshop.onrender.com`;
