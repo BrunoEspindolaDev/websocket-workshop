@@ -1,5 +1,8 @@
 import dayjs from 'dayjs';
 import appStore from '@/app/App.store';
+import { motion } from 'framer-motion';
+
+const MotionDiv = motion.div;
 
 const ChatMessagesItem = ({ message }) => {
   const username = appStore(state => state.username);
@@ -7,7 +10,9 @@ const ChatMessagesItem = ({ message }) => {
   const isSender = message.sender === username;
 
   return (
-    <div
+    <MotionDiv
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
       className={`flex flex-col p-3 rounded-lg max-w-[75%] text-white ${
         isSender ? 'ml-auto' : ''
       } `}
@@ -19,7 +24,7 @@ const ChatMessagesItem = ({ message }) => {
         </span>
       </div>
       <span className="text-sm">{message.text}</span>
-    </div>
+    </MotionDiv>
   );
 };
 

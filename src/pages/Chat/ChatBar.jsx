@@ -4,6 +4,7 @@ import { useMemo, useState } from 'react';
 import { createMessage } from '@/utils';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
+import { Send } from 'lucide-react';
 
 const ChatBar = () => {
   const ws = appStore(({ ws }) => ws);
@@ -31,13 +32,13 @@ const ChatBar = () => {
         placeholder="Digite sua mensagem..."
         onChange={e => setValue(e.target.value)}
         onKeyDown={e => e.key === 'Enter' && handleSendMessage()}
-        className="h-[50px] font-small rounded-4 pl-3"
+        className="h-[50px] font-medium text-sm rounded-4 pl-3"
       />
       <Button
         className="h-[50px] ml-2 cursor-pointer font-bold rounded-4"
         disabled={!hasMessage}
         onClick={handleSendMessage}>
-        Enviar
+        <Send className="!w-[22px] !h-[22px]" />
       </Button>
     </div>
   );
