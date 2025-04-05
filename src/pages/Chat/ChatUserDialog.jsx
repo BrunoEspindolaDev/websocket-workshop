@@ -1,4 +1,5 @@
 import { isEmpty } from 'lodash';
+import randomColor from 'randomcolor';
 import appStore from '@/app/App.store';
 import { useState, useMemo } from 'react';
 import { Input } from '@/components/ui/input';
@@ -14,6 +15,7 @@ import {
 const ChatUserDialog = () => {
   const username = appStore(state => state.username);
   const setUsername = appStore(state => state.setUsername);
+  const setUsercolor = appStore(state => state.setUsercolor);
 
   const [value, setValue] = useState('');
 
@@ -22,6 +24,7 @@ const ChatUserDialog = () => {
   const handleSave = () => {
     if (!hasUsername) return;
     setUsername(value);
+    setUsercolor(randomColor({ luminosity: 'dark' }));
   };
 
   return (

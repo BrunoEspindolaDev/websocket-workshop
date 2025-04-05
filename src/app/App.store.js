@@ -3,7 +3,8 @@ import { createJSONStorage, persist } from 'zustand/middleware';
 
 const initialState = {
   ws: null,
-  username: null
+  username: null,
+  usercolor: null
 };
 
 const appStore = create(
@@ -11,7 +12,8 @@ const appStore = create(
     set => ({
       ...initialState,
       setWs: ws => set({ ws }),
-      setUsername: username => set({ username })
+      setUsername: username => set({ username }),
+      setUsercolor: usercolor => set({ usercolor })
     }),
     {
       name: 'app-store',

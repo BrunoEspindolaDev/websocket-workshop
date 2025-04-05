@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 const ChatBar = () => {
   const ws = appStore(({ ws }) => ws);
   const username = appStore(({ username }) => username);
+  const usercolor = appStore(({ usercolor }) => usercolor);
 
   const [value, setValue] = useState('');
 
@@ -15,7 +16,7 @@ const ChatBar = () => {
 
   const handleSendMessage = () => {
     if (hasMessage) {
-      const message = createMessage(username, value);
+      const message = createMessage(username, usercolor, value);
       const messageJSON = JSON.stringify(message);
 
       ws.send(messageJSON);

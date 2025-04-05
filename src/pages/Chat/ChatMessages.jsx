@@ -16,6 +16,8 @@ const ChatMessages = () => {
     }
   }, [ws]);
 
+  console.log({ messages });
+
   if (!messages) {
     return null;
   }

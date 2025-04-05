@@ -1,7 +1,8 @@
-export const createMessage = (username, text) => ({
+export const createMessage = (username, usercolor, text) => ({
   sender: username,
   text: text.trim(),
-  date: new Date()
+  date: new Date(),
+  bg: usercolor
 });
 
 export const transformMessage = data => {
