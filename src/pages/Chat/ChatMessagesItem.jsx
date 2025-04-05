@@ -1,8 +1,8 @@
 import dayjs from 'dayjs';
-import chatStore from './Chat.store';
+import appStore from '@/app/App.store';
 
 const ChatMessagesItem = ({ message }) => {
-  const username = chatStore(state => state.username);
+  const username = appStore(state => state.username);
 
   const isSender = message.sender === username;
 
